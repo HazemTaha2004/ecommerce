@@ -47,6 +47,12 @@
                   <div *ngIf="billingAddressForm.get('email')?.hasError('required')" class="alert alert-danger">
                     Please Enter your Email Address.
                   </div>
+                  <div *ngIf="billingAddressForm.get('email')?.hasError('minlength')" class="alert alert-danger">
+                    email must be  5/100 characters
+                  </div>
+                  <div *ngIf="billingAddressForm.get('address')?.hasError('maxlength')" class="alert alert-danger">
+                    email must be  5/100 characters
+                  </div>
                 </div> 
             </div>
             
@@ -60,7 +66,10 @@
                   Please Enter your Address.
 
                 </div>
-                <div *ngIf="billingAddressForm.get('address')?.hasError('minlength') && billingAddressForm.get('address')?.hasError('maxlength')" class="alert alert-danger">
+                <div *ngIf="billingAddressForm.get('address')?.hasError('minlength')" class="alert alert-danger">
+                  Address must be  5/100 characters
+                </div>
+                <div *ngIf="billingAddressForm.get('address')?.hasError('maxlength')" class="alert alert-danger">
                   Address must be  5/100 characters
                 </div>
               </div> 

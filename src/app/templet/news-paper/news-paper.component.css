@@ -1,0 +1,71 @@
+#newsPaper{
+    content: "\f003";
+    border-top: 2px solid #E4E7ED;
+    text-align: center;
+
+}
+.newsParagraph{
+    margin-top: 30px;
+
+    font: 26px tahoma;
+}
+.subscribe {
+    margin-top: 40px;
+
+}
+.newsletter input[type="text"]{
+    height: 40px;
+    border-radius: 20px 0 0 20px;
+    width: 360px; /* Adjust to desired length */
+    padding: 0 20px; /* Adjust padding to fit text */
+    border: 1px solid #ccc; /* Add border styling */
+    outline: none;
+    flex: 1; /* Allow the input to take up remaining space */
+
+}
+.newsletter input.search-btn[type="button"]{
+    height: 40.5px;
+    width: 160px; /* Adjust to fit the button text */
+    border-radius: 0 20px 20px 0;
+    background-color: #D10024;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.soicalLinks{
+    margin: 30px 0 30px 0;
+    text-align: center;
+    
+
+}
+.soicalLinks ul {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+.soicalLinks ul li{
+    width: 40px;
+    height: 40px;
+    list-style: none;
+    justify-content: center ;
+    margin-right: 20px;
+
+}
+.soicalLinks ul li a{
+    color: black;
+    display: block;
+    line-height: 50px;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    border:1px solid #E4E7ED;
+    text-decoration: none; 
+}
+.soicalLinks ul li a:hover{
+    background-color: #E4E7ED;
+    color: #D10024;
+    border-radius:50px ;
+
+}

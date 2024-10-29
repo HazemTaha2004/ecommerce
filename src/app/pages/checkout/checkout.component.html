@@ -1,0 +1,130 @@
+<app-top-header></app-top-header>
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div id="content" class="row">
+  <div class="container">
+    <div class="wrap-content">
+      <div class="col-md-6">
+        <h1>{{ header }}</h1>
+        <div class="form">
+          <form [formGroup]="billingAddressForm" (ngSubmit)="billingAddress()">
+            <!-- Name Inputs in a Row -->
+            <div class="row mb-3">
+              <!-- First Name Input -->
+              <div class="col-md-6">
+                <label class="form-label" for="form3Example4">First Name</label>
+                <input formControlName="firstName" type="text" id="form3Example4" class="form-control form-control-lg" placeholder="First Name" />
+                <div *ngIf="billingAddressForm.get('firstName')?.invalid && billingAddressForm.get('firstName')?.touched" class="alert alert-danger">
+                  <div *ngIf="billingAddressForm.get('firstName')?.hasError('required')" class="alert alert-danger">
+                    Please Enter your First Name.
+                  </div>
+                  <div *ngIf="billingAddressForm.get('firstName')?.hasError('minlength')" class="alert alert-danger">
+                    First Name must be at least 5 characters
+                  </div>
+                </div>
+              </div>
+
+              <!-- Last Name Input -->
+              <div class="col-md-6">
+                <label class="form-label" for="form3Example4">Last Name</label>
+                <input formControlName="lastName" type="text" id="form3Example4" class="form-control form-control-lg" placeholder="Last Name" />
+                <div *ngIf="billingAddressForm.get('lastName')?.invalid && billingAddressForm.get('lastName')?.touched" class="alert alert-danger">
+                  <div *ngIf="billingAddressForm.get('lastName')?.hasError('required')" class="alert alert-danger">
+                    Please Enter your Last Name.
+                  </div>
+                  <div *ngIf="billingAddressForm.get('lastName')?.hasError('minlength')" class="alert alert-danger">
+                    Last Name must be at least 5 characters
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Input -->
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input formControlName="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <div *ngIf="billingAddressForm.get('email')?.invalid && billingAddressForm.get('email')?.touched" class="alert alert-danger">
+                  <div *ngIf="billingAddressForm.get('email')?.hasError('required')" class="alert alert-danger">
+                    Please Enter your Email Address.
+                  </div>
+                </div> 
+            </div>
+            
+            <!-- Address Input -->
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Address</label>
+              <input formControlName="address" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Street Address">
+              <div *ngIf="billingAddressForm.get('address')?.invalid && billingAddressForm.get('address')?.touched" class="alert alert-danger">
+                <div *ngIf="billingAddressForm.get('address')?.hasError('required')" class="alert alert-danger">
+                  Please Enter your Address.
+
+                </div>
+                <div *ngIf="billingAddressForm.get('address')?.hasError('minlength') && billingAddressForm.get('address')?.hasError('maxlength')" class="alert alert-danger">
+                  Address must be  5/100 characters
+                </div>
+              </div> 
+            </div>
+
+            <!-- Address 2 Input -->
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Address 2</label>
+              <input formControlName="address2" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apartment, suite, etc. (optional)">
+            </div>
+            
+            <!-- Country Selection -->
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Country</label>
+              <select formControlName="country" class="form-select" aria-label="Default select example">
+                <option *ngFor="let country of countrys" [value]="country">{{ country }}</option>
+              </select>
+              <div *ngIf="billingAddressForm.get('country')?.invalid && billingAddressForm.get('country')?.touched" class="alert alert-danger">
+                <div *ngIf="billingAddressForm.get('country')?.hasError('required')" class="alert alert-danger">
+                  Please select Your Country.
+                </div> 
+              </div> 
+            </div>
+
+            <!-- State Selection -->
+            
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">State</label>
+              <select formControlName="state" class="form-select" aria-label="Default select example">
+                <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+              </select>
+              <div *ngIf="billingAddressForm.get('state')?.invalid && billingAddressForm.get('state')?.touched" class="alert alert-danger">
+                <div *ngIf="billingAddressForm.get('state')?.hasError('required')" class="alert alert-danger">
+                  Please select Your State.
+                </div> 
+              </div>
+            </div>
+
+            <!-- Zip Code Input -->
+
+
+            <div data-mdb-input-init class="form-outline mb-3">
+              <label class="form-label" for="form3Example4">Zip</label>
+              <input formControlName="zip" type="text" id="form3Example4" class="form-control form-control-lg"/>
+              <div *ngIf="billingAddressForm.get('zip')?.invalid && billingAddressForm.get('zip')?.touched" class="alert alert-danger">
+                <div *ngIf="billingAddressForm.get('zip')?.hasError('required')" class="alert alert-danger">
+                  Please Enter Your Zip Code.
+                </div>
+                <div *ngIf="billingAddressForm.get('zip')?.hasError('minlength') " class="alert alert-danger">
+                  Zip Code must be at least 5 char.
+                </div>
+              </div> 
+            </div> 
+            <div class="mb-3">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Order Notes"></textarea>
+            </div>
+            <a routerLink="/register">Create Account?</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-news-paper></app-news-paper>
+<app-footer></app-footer>

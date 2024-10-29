@@ -1,0 +1,24 @@
+<div id="newsPaper" class="section">
+    <div class="container">
+        <div class="wrap-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newsletter">
+                        <p class="newsParagraph">{{Paragraph}}<strong>{{boldWord}}</strong></p>
+                        <form class="subscribe">
+                            <input type="text" placeholder="Enter Your Email">
+                            <input type="button" class="search-btn"  value="Subscribe">
+                        </form>
+                    </div>
+                    <div class="soicalLinks">
+                        <ul>
+                            <li *ngFor="let link of links; index as i; trackBy: trackByFn">
+                                <a href="#"><i class="fa" [ngClass]="link"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+#footer {
+    background: #15161D;
+    color: #B9BABC;
+    border-top: 3px solid #D10024;
+  }
+#topFooter{
+    margin-top: 30px;
+    height: 160px;
+    min-height: 300px;
+    overflow: hidden;
+}
+.footer-title {
+    display: block;
+    margin: 10px 30px 20px 0;
+    padding: 0 0 0 30px;
+    font-size: 18px;
+    color: white;
+}
+.footer-links li {
+    list-style: none;
+    margin-top: 10px;
+
+}
+.footer-links li a{
+    font: 14px sans-serif;
+    color: #B9BABC;
+    text-decoration: none;
+}
+.footer-links li a:hover{
+    color: red;
+}
+p{
+    font: 14px sans-serif;
+    float: left;
+    display: block;;
+}
+/*/ bottom Footer /*/ 
+
+
+#bottomFooter{
+    height: 160px;
+    background: #1E1F29;
+    
+}
+.paymentCard{
+    margin-top: 20px;
+    text-align: center;
+
+}
+.paymentCard li   {
+    list-style: none;
+}
+.paymentCard li a   {
+    color: #15161D;
+    opacity: 1;
+    font-size: 36px;
+    margin-right: 20px;
+
+}
+.paymentCard li a:hover  {
+    color: wheat;
+    opacity: 1;
+
+
+}
+
+.copyRight{
+    margin-top: 15px;
+
+    text-align: center;
+}
+.pullLeft{
+    float: left;
+    margin-left: 0;
+    padding-left: 0;
+}

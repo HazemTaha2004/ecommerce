@@ -1,0 +1,31 @@
+<app-top-header></app-top-header>
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div id="content" class="row p-2">
+    <div class="container">
+        <div class="wrap-content">
+            <div class="col">
+                <h3>All Product</h3>
+                <div class="row">
+                  <div *ngFor="let news of allNews" class="col-3">
+                    <div class="card">
+                      <img [src]="news.mainImage" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{news.title}}</h5>
+                        <p class="card-text">{{news.content}}</p>
+                        <a routerLink="#" class="btn btn-primary">read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+<app-news-paper></app-news-paper>
+<app-footer></app-footer>
+
+
+
+
+

@@ -40,6 +40,12 @@
                                 <div *ngIf="loginForm.get('email')?.hasError('required')" class="alert alert-danger">
                                     Email is required to login
                                 </div>
+                                <div *ngIf="loginForm.get('email')?.hasError('minlength')" class="alert alert-danger">
+                                  Email must be min 8char 
+                              </div>
+                              <div *ngIf="loginForm.get('email')?.hasError('maxlength')" class="alert alert-danger">
+                                  password must be min 8char max 32 
+                              </div>
                             </div>
                         </div>
               
@@ -52,7 +58,10 @@
                                 <div *ngIf="loginForm.get('password')?.hasError('required') " class="alert alert-danger">
                                     password is Required to login
                                 </div>
-                                <div *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.hasError('maxlength')" class="alert alert-danger">
+                                <div *ngIf="loginForm.get('password')?.hasError('minlength')" class="alert alert-danger">
+                                    password must be min 8char max 32 
+                                </div>
+                                <div *ngIf="loginForm.get('password')?.hasError('maxlength')" class="alert alert-danger">
                                     password must be min 8char max 32 
                                 </div>
                             </div>

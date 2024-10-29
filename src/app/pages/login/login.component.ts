@@ -22,6 +22,7 @@ export class LoginComponent {
       email: new FormControl('', [
         Validators.required,
         Validators.minLength(5),
+        Validators.maxLength(150),
       ]),
       password: new FormControl('', [
         Validators.required,

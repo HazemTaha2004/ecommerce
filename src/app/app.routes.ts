@@ -11,6 +11,7 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 
 export const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
+  { path: '', component: BlankComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

@@ -10,14 +10,12 @@ import { TestComponent } from './pages/test/test.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 
 export const routes: Routes = [
-    {path:"checkout", component:CheckoutComponent},
-    {path:"", component:BlankComponent},
-    {path:"home", component:HomeComponent},
-    {path:"login", component:LoginComponent},
-    {path:"register", component:RegisterComponent},
-    {path:"Product", component:ProductService},
-    {path:"store", component:StoreComponent},
-    {path:"categories", component:CategoriesComponent},
-    {path:"test", component:TestComponent},
-
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'Product', component: ProductService },
+  { path: 'store', component: StoreComponent },
+  { path: 'categories', component: CategoriesComponent },
+  { path: 'test', component: TestComponent },
 ];

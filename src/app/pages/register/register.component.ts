@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { TopHeaderComponent } from "../../templet/top-header/top-header.component";
-import { HeaderComponent } from "../../templet/header/header.component";
-import { NavbarComponent } from "../../templet/navbar/navbar.component";
-import { FooterComponent } from "../../templet/footer/footer.component";
+import { TopHeaderComponent } from "../../templates/top-header/top-header.component";
+import { HeaderComponent } from "../../templates/header/header.component";
+import { NavbarComponent } from "../../templates/navbar/navbar.component";
+import { FooterComponent } from "../../templates/footer/footer.component";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -25,7 +25,6 @@ export class RegisterComponent {
       email: new FormControl('', [
         Validators.required,
         Validators.minLength(5),
-        Validators.maxLength(100),
       ]),
       password: new FormControl('', [
         Validators.required,

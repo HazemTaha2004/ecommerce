@@ -1,0 +1,26 @@
+.pullLeft{
+    float: left;
+}
+.pullRight{
+    float: right;
+}
+#topHeader{
+    height: 50px;
+    overflow: hidden;
+    background-color: #1E1F29;
+}
+ ul li {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    font-size: 12px;
+    list-style: none;
+}
+ ul li a{
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+ ul li a:hover{
+    color: red;
+}

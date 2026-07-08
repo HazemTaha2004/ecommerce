@@ -1,0 +1,74 @@
+<div id="footer" class="row">
+    <div class="container">
+        <div id="topFooter" class="section">
+            <div class="wrap-content">
+                <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h1 class="footer-title pullLeft">About Us</h1>
+                            <p>{{paragraphAboutUs}}</p>
+                            <ul class="footer-links pullLeft">
+                                <li><a href="#"><i class="fa fa-phone"></i>  {{phoneNumber}}</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> {{emailAddrese}}</a></li>
+                                <li><a href="#"><i class="fa fa-map-marker"></i>  {{location}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h1 class="footer-title">Categories</h1>
+                            <ul class="footer-links">
+                                <li *ngFor="let categorieLink of categorieLinks; index as i; trackBy: trackByFn">
+                                    <a href="#">{{categorieLink}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h1 class="footer-title">Information</h1>
+                            <ul class="footer-links">
+                                <li *ngFor="let informationLink of informationLinks; index as i; trackBy: trackByFn">
+                                    <a href="#">{{informationLink}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h1 class="footer-title">Service</h1>
+                            <ul class="footer-links">
+                                <li *ngFor="let ServiceLink of ServiceLinks; index as i; trackBy: trackByFn">
+                                     <a href="#">{{ServiceLink}}</a>
+                                 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottomFooter" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="paymentCard">
+                            <li>
+                                <a href="#"><i class="fa-brands fa-cc-visa"></i></a>
+                                <a href="#"><i class="fa fa-credit-card"></i></a>
+                                <a href="#"><i class="fa-brands fa-paypal"></i></a>
+                                <a href="#"><i class="fa-brands fa-cc-mastercard"></i></a>
+                                <a href="#"><i class="fa-brands fa-cc-discover"></i></a>
+                                <a href="#"><i class="fa-brands fa-cc-amex"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="copyRight">
+                        Copyright ©2024 All rights reserved | This template is made with  by Hazem Taha<3
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+</div>

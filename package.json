@@ -1,13 +1,13 @@
 {
-  "name": "my-first-project",
-  "version": "0.0.0",
+  "name": "electro-store",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:my-first-project": "node dist/my-first-project/server/server.mjs"
+    "serve:ssr:electro-store": "node dist/electro-store/server/server.mjs"
   },
   "private": true,
   "dependencies": {

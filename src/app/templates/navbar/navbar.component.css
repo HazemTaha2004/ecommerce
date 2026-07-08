@@ -1,0 +1,8 @@
+#navbar{
+    height: 60px;
+    background: #f8f9fa;
+    border-top: 3px solid #D10024;
+}
+.navbar-nav li a:hover{
+    border-bottom: 2px red solid;
+}

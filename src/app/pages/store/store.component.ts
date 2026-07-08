@@ -1,57 +1,65 @@
-import { Component, OnInit } from '@angular/core';
-import { TopHeaderComponent } from "../../templet/top-header/top-header.component";
-import { HeaderComponent } from "../../templet/header/header.component";
-import { NavbarComponent } from "../../templet/navbar/navbar.component";
-import { FooterComponent } from "../../templet/footer/footer.component";
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductService } from '../../services/product.service';
-import { HttpClientModule } from '@angular/common/http';
-import { NewsPaperComponent } from "../../templet/news-paper/news-paper.component";  // Make sure this is imported
+import { TopHeaderComponent } from '../../templates/top-header/top-header.component';
+import { HeaderComponent } from '../../templates/header/header.component';
+import { NavbarComponent } from '../../templates/navbar/navbar.component';
+import { FooterComponent } from '../../templates/footer/footer.component';
+import { NewsPaperComponent } from '../../templates/news-paper/news-paper.component';
+
+interface Category { id: number; name: string; count: number; }
+interface Brand    { id: number; name: string; count: number; }
+interface StoreProduct {
+  image: string;
+  category: string;
+  name: string;
+  price: number;
+  oldPrice?: number;
+  rating?: number;
+  sale?: number;
+  isNew?: boolean;
+}
 
 @Component({
   selector: 'app-store',
   standalone: true,
   imports: [
+    CommonModule,
     TopHeaderComponent,
     HeaderComponent,
     NavbarComponent,
     FooterComponent,
-    CommonModule,
-    HttpClientModule,
-    NewsPaperComponent
-],
+    NewsPaperComponent,
+  ],
   templateUrl: './store.component.html',
-  styleUrls: ['./store.component.css']
+  styleUrls: ['./store.component.css'],
 })
 export class StoreComponent {
-  // Sample data for categories, brands, and products
-  categories = [
-    { id: 1, name: 'Laptops', count: 120 },
-    { id: 2, name: 'Smartphones', count: 740 },
-    { id: 3, name: 'Cameras', count: 1450 },
-    { id: 4, name: 'Accessories', count: 578 },
+  readonly categories: Category[] = [
+    { id: 1, name: 'Laptops',       count: 120  },
+    { id: 2, name: 'Smartphones',   count: 740  },
+    { id: 3, name: 'Cameras',       count: 1450 },
+    { id: 4, name: 'Accessories',   count: 578  },
   ];
 
-  brands = [
+  readonly brands: Brand[] = [
     { id: 1, name: 'SAMSUNG', count: 578 },
-    { id: 2, name: 'LG', count: 125 },
-    { id: 3, name: 'SONY', count: 755 },
+    { id: 2, name: 'LG',      count: 125 },
+    { id: 3, name: 'SONY',    count: 755 },
   ];
 
-  topSellingProducts = [
-    { image: './img/product01.png', category: 'Category 1', name: 'Product 1', price: 980.00, oldPrice: 990.00 },
-    { image: './img/product02.png', category: 'Category 2', name: 'Product 2', price: 880.00, oldPrice: 900.00 },
-    { image: './img/product03.png', category: 'Category 3', name: 'Product 3', price: 780.00 },
+  readonly topSellingProducts: StoreProduct[] = [
+    { image: './img/product01.png', category: 'Laptops',     name: 'UltraBook Pro 15',  price: 980, oldPrice: 990 },
+    { image: './img/product02.png', category: 'Smartphones', name: 'Galaxy X10',        price: 880, oldPrice: 900 },
+    { image: './img/product03.png', category: 'Cameras',     name: 'CamMaster 4K',      price: 780 },
   ];
 
-  products = [
-    // Sample product data
-    { image: './img/product01.png', name: 'Product A', price: 300, oldPrice: 350, rating: 4, category: 'Category A', sale: 15, isNew: true },
-    { image: './img/product02.png', name: 'Product B', price: 450, oldPrice: 500, rating: 5, category: 'Category B' },
-    // Add more products as needed
+  readonly products: StoreProduct[] = [
+    { image: './img/product01.png', name: 'Laptop Elite', price: 300, oldPrice: 350, rating: 4, category: 'Laptops',     sale: 15, isNew: true },
+    { image: './img/product02.png', name: 'Phone Pro X',  price: 450, oldPrice: 500, rating: 5, category: 'Smartphones' },
   ];
 
-  getStars(rating: number) {
-    return Array(rating).fill(0); // Simple method to generate stars based on rating
+  /** Returns an array of `count` items for use with *ngFor star rendering */
+  getStars(count: number): number[] {
+    return Array(count).fill(0);
   }
 }

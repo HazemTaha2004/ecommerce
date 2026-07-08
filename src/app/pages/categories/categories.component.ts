@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NewsPaperComponent } from "../../templet/news-paper/news-paper.component";
-import { FooterComponent } from "../../templet/footer/footer.component";
-import { TopHeaderComponent } from "../../templet/top-header/top-header.component";
-import { HeaderComponent } from "../../templet/header/header.component";
-import { NavbarComponent } from "../../templet/navbar/navbar.component";
+import { NewsPaperComponent } from "../../templates/news-paper/news-paper.component";
+import { FooterComponent } from "../../templates/footer/footer.component";
+import { TopHeaderComponent } from "../../templates/top-header/top-header.component";
+import { HeaderComponent } from "../../templates/header/header.component";
+import { NavbarComponent } from "../../templates/navbar/navbar.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';

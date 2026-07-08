@@ -2,21 +2,32 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+/** Shape of a FakeStore API product */
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: { rate: number; count: number };
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private url = 'https://fakestoreapi.com/products'; // Replace with your actual API URL
+  private readonly baseUrl = 'https://fakestoreapi.com/products';
 
   constructor(private http: HttpClient) {}
 
-  getAllProductsData(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+  /** Fetch all products */
+  getAllProductsData(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl);
   }
-  // publisher 
-  getProductByIdData(id:string|null): Observable<any>
-  {
-    // url : http://localhost:8000/api/editor/1/show"
-    return  this.http.get(this.url+id+"/show");
+
+  /** Fetch a single product by numeric ID */
+  getProductByIdData(id: string | number): Observable<Product> {
+    return this.http.get<Product>(`${this.baseUrl}/${id}`);
   }
 }

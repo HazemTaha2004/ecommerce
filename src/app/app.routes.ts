@@ -10,13 +10,17 @@ import { TestComponent } from './pages/test/test.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 
 export const routes: Routes = [
-  { path: 'checkout', component: CheckoutComponent },
-  { path: '', component: BlankComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'Product', component: ProductService },
-  { path: 'store', component: StoreComponent },
-  { path: 'categories', component: CategoriesComponent },
-  { path: 'test', component: TestComponent },
+    {path:"checkout", component:CheckoutComponent},
+    {path:"", component:BlankComponent},
+    {path:"home", component:HomeComponent},
+    {path:"login", component:LoginComponent},
+    {path:"register", component:RegisterComponent},
+    // NOTE: ProductService is an Injectable service, not an Angular component. 
+    // Mapping it directly in the routing config causes Angular build/runtime errors.
+    // TODO: Create a ProductDetailComponent to manage this path and handle dynamic product details.
+    // {path:"Product", component:ProductService},
+    {path:"store", component:StoreComponent},
+    {path:"categories", component:CategoriesComponent},
+    {path:"test", component:TestComponent},
+
 ];

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { TopHeaderComponent } from "../../templet/top-header/top-header.component";
-import { FooterComponent } from "../../templet/footer/footer.component";
-import { HeaderComponent } from "../../templet/header/header.component";
-import { NavbarComponent } from "../../templet/navbar/navbar.component";
+import { TopHeaderComponent } from "../../templates/top-header/top-header.component";
+import { FooterComponent } from "../../templates/footer/footer.component";
+import { HeaderComponent } from "../../templates/header/header.component";
+import { NavbarComponent } from "../../templates/navbar/navbar.component";
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -22,7 +22,6 @@ export class LoginComponent {
       email: new FormControl('', [
         Validators.required,
         Validators.minLength(5),
-        Validators.maxLength(150),
       ]),
       password: new FormControl('', [
         Validators.required,
